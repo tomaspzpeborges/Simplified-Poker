@@ -1,0 +1,24 @@
+// For use with JDK 8 on the School of Computing Linux machines
+// (See README-jfx file for additional configuration requirements)
+
+plugins {
+  id 'java'
+  id 'application'
+  id 'idea'
+}
+
+dependencies {
+  implementation project(':core')
+  implementation project(':advanced')
+}
+
+mainClassName = 'comp1721.cwk2.DisplayDeck'
+
+defaultTasks 'run'
+
+idea {
+  module {
+    outputDir file('build/classes/main')
+    testOutputDir file('build/classes/test')
+  }
+}

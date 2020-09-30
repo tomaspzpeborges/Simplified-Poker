@@ -1,0 +1,27 @@
+// For use with JDK 8 on the School of Computing Linux machines
+// (See README-jfx file for additional configuration requirements)
+
+plugins {
+  id 'java-library'
+  id 'checkstyle'
+  id 'idea'
+}
+
+dependencies {
+  implementation project(':core')
+}
+
+checkstyle {
+  showViolations false
+}
+
+task style {
+  dependsOn checkstyleMain
+}
+
+idea {
+  module {
+    outputDir file('build/classes/main')
+    testOutputDir file('build/classes/test')
+  }
+}

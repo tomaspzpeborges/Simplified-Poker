@@ -1,0 +1,29 @@
+plugins {
+  id 'java'
+  id 'checkstyle'
+  id 'application'
+  id 'idea'
+}
+
+dependencies {
+  implementation project(':core')
+}
+
+checkstyle {
+  showViolations false
+}
+
+task style {
+  dependsOn checkstyleMain
+}
+
+mainClassName = 'comp1721.cwk2.PokerStats'
+
+defaultTasks 'run'
+
+idea {
+  module {
+    outputDir file('build/classes/main')
+    testOutputDir file('build/classes/test')
+  }
+}

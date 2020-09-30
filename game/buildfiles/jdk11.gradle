@@ -1,0 +1,43 @@
+// For use with JDK 11 on your own PC
+
+plugins {
+  id 'java'
+  id 'org.openjfx.javafxplugin' version '0.0.8'
+  id 'checkstyle'
+  id 'application'
+  id 'idea'
+}
+
+dependencies {
+  implementation project(':core')
+  implementation project(':advanced')
+}
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_11
+  targetCompatibility = JavaVersion.VERSION_11
+}
+
+javafx {
+  version = '11'
+  modules = [ 'javafx.controls' ]
+}
+
+checkstyle {
+  showViolations false
+}
+
+task style {
+  dependsOn checkstyleMain
+}
+
+mainClassName = 'comp1721.cwk2.PokerGame'
+
+defaultTasks 'run'
+
+idea {
+  module {
+    outputDir file('build/classes/main')
+    testOutputDir file('build/classes/test')
+  }
+}

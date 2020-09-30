@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>README-jfx</title>
+  <style>
+    body{margin: 2em 1em;}
+    pre{margin-left: 2em;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="using-javafx-for-the-advanced-task">Using JavaFX for the Advanced Task</h1>
+<p>There are two steps required to configure your environment for the advanced task. Step 1 is to edit <code>settings.gradle</code> and uncomment the last four lines of the file - the ones referencing the <code>advanced</code>, <code>display</code>, <code>animate</code> and <code>game</code> projects.</p>
+<p>Step 2 depends upon where you’ll be working. We assume three possibilities: JDK 8 on SoC Linux machines, JDK 11 on your own PC and JDK 13 on your own PC. The instructions differ slightly for each environment - see the appropriate section below for further details.</p>
+<h2 id="jdk-8-on-school-of-computing-linux-machines">JDK 8 on School of Computing Linux Machines</h2>
+<p>In a terminal window, move into each of the directories <code>advanced</code>, <code>display</code>, <code>animate</code> and <code>game</code>. In each of these directories, enter the following command:</p>
+<pre><code>cp buildfiles/jdk8.gradle build.gradle</code></pre>
+<p>Then move up to the <code>cwk2</code> directory and enter the following:</p>
+<pre><code>cp jdk8-gradle.properties gradle.properties</code></pre>
+<h2 id="jdk-11-on-your-own-pc">JDK 11 on your own PC</h2>
+<p>In a terminal window, move into each of the directories <code>advanced</code>, <code>display</code>, <code>animate</code> and <code>game</code>. In each of these directories, enter the following command:</p>
+<pre><code>cp buildfiles/jdk11.gradle build.gradle</code></pre>
+<h2 id="jdk-13-on-your-own-pc">JDK 13 on your own PC</h2>
+<p>In a terminal window, move into each of the directories <code>advanced</code>, <code>display</code>, <code>animate</code> and <code>game</code>. In each of these directories, enter the following command:</p>
+<pre><code>cp buildfiles/jdk13.gradle build.gradle</code></pre>
+</body>
+</html>

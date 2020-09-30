@@ -1,0 +1,38 @@
+plugins {
+  id 'java-library'
+  id 'checkstyle'
+  id 'idea'
+}
+
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+  testImplementation 'org.hamcrest:hamcrest-library:2.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+}
+
+test {
+  useJUnitPlatform()
+
+  testLogging {
+    events 'PASSED', 'FAILED', 'SKIPPED'
+  }
+}
+
+checkstyle {
+  showViolations false
+}
+
+task style {
+  dependsOn checkstyleMain
+}
+
+javadoc {
+  options.author true
+}
+
+idea {
+  module {
+    outputDir file('build/classes/main')
+    testOutputDir file('build/classes/test')
+  }
+}

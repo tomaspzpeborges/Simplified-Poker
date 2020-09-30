@@ -1,0 +1,37 @@
+// For use with JDK 13 on your own PC
+
+plugins {
+  id 'java-library'
+  id 'org.openjfx.javafxplugin' version '0.0.8'
+  id 'checkstyle'
+  id 'idea'
+}
+
+dependencies {
+  implementation project(':core')
+}
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_13
+  targetCompatibility = JavaVersion.VERSION_13
+}
+
+javafx {
+  version = '13'
+  modules = [ 'javafx.controls' ]
+}
+
+checkstyle {
+  showViolations false
+}
+
+task style {
+  dependsOn checkstyleMain
+}
+
+idea {
+  module {
+    outputDir file('build/classes/main')
+    testOutputDir file('build/classes/test')
+  }
+}
